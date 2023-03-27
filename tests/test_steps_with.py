@@ -6,8 +6,6 @@ from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 
 
-
-
 def dynamic_labels():
     allure.dynamic.tag("web")
     allure.dynamic.description("Homework 9")
@@ -37,7 +35,3 @@ def test_github2():
         s(by.partial_text('#76')).should(be.visible)
 
     dynamic_labels()
-
-
-
-

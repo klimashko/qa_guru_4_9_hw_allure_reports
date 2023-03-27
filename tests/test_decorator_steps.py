@@ -1,4 +1,5 @@
 import allure
+from allure_commons.types import Severity
 from selene import be
 from selene.support import by
 from selene.support.shared import browser
@@ -7,6 +8,12 @@ from selene.support.shared.jquery_style import s
 
 
 
+@allure.tag("web")
+@allure.severity(Severity.MINOR)
+@allure.label("owner", "klimashko")
+@allure.feature("Тест со степовой моделью, разметка тестов")
+@allure.story("Возможно сделать тест со степовой моделью")
+@allure.link("https://github.com", name="Testing")
 def test_github3():
     open_main_page()
     search_repository('eroshenkoam/allure-example')

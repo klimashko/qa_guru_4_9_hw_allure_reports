@@ -1,11 +1,21 @@
 import allure
+from allure_commons.types import Severity
 from selene import be
 from selene.support import by
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
-from time import sleep
 
 
+
+
+def dynamic_labels():
+    allure.dynamic.tag("web")
+    allure.dynamic.description("Homework 9")
+    allure.dynamic.severity(Severity.BLOCKER)
+    allure.dynamic.feature("Задачи в репозитории")
+    allure.dynamic.story(
+        "Неавторизованный пользователь может посмотреть issue")
+    allure.dynamic.link("https://github.com", name="Testing")
 
 
 def test_github2():
@@ -26,7 +36,7 @@ def test_github2():
     with allure.step('Проверяем наличие Issue с номером 76'):
         s(by.partial_text('#76')).should(be.visible)
 
-
+    dynamic_labels()
 
 
 

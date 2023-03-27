@@ -8,7 +8,7 @@ from time import sleep
 
 
 
-def test_github():
+def test_github2():
     with allure.step('Открываем главую страницу GitHub'):
         browser.open('https://github.com')
 

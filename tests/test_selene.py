@@ -7,7 +7,7 @@ from time import sleep
 
 
 
-def test_github():
+def test_github1():
     browser.open('https://github.com')
 
     s('.header-search-input').click()

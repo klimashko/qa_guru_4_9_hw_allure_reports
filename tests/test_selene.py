@@ -6,8 +6,6 @@ from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 
 
-
-
 @allure.tag("web")
 @allure.severity(Severity.CRITICAL)
 @allure.label("owner", "klimashko")
@@ -26,7 +24,3 @@ def test_github1():
     s('#issues-tab').click()
 
     s(by.partial_text('#76')).should(be.visible)
-
-
-
-

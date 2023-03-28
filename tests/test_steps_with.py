@@ -22,16 +22,16 @@ def test_github2():
 
     with allure.step('Ищем репозиторий'):
         s('.header-search-input').click()
-        s('.header-search-input').send_keys('eroshenkoam/allure-example')
+        s('.header-search-input').send_keys('klimashko/qa_guru_4_9_hw_allure_reports')
         s('.header-search-input').submit()
 
     with allure.step('Открываем репозиторий'):
-        s(by.link_text('eroshenkoam/allure-example')).click()
+        s(by.link_text('klimashko/qa_guru_4_9_hw_allure_reports')).click()
 
     with allure.step('Открываем Issues'):
         s('#issues-tab').click()
 
-    with allure.step('Проверяем наличие Issue с номером 76'):
-        s(by.partial_text('#76')).should(be.visible)
+    with allure.step('Проверяем наличие Issue с номером 1'):
+        s(by.partial_text('#1')).should(be.visible)
 
     dynamic_labels()

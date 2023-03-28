@@ -1,5 +1,3 @@
-from time import sleep
-
 import allure
 from allure_commons.types import Severity
 from selene import be
@@ -48,4 +46,3 @@ def open_issue_tab():
 def should_see_issue_with_number(number):
     s(by.partial_text('#' + number)).should(be.visible)
 
-sleep(5)

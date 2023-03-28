@@ -1,3 +1,5 @@
+from time import sleep
+
 import allure
 from allure_commons.types import Severity
 from selene import be
@@ -16,11 +18,12 @@ def test_github1():
     browser.open('https://github.com')
 
     s('.header-search-input').click()
-    s('.header-search-input').send_keys('eroshenkoam/allure-example')
+    s('.header-search-input').send_keys('klimashko/qa_guru_4_9_hw_allure_reports')
     s('.header-search-input').submit()
 
-    s(by.link_text('eroshenkoam/allure-example')).click()
+    s(by.link_text('klimashko/qa_guru_4_9_hw_allure_reports')).click()
 
     s('#issues-tab').click()
 
-    s(by.partial_text('#76')).should(be.visible)
+    s(by.partial_text('#1')).should(be.visible)
+

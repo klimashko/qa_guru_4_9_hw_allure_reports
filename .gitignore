@@ -1,4 +1,4 @@
-.idea
+.idea/
 allure-results
 __pycache__/
 *.py[cod]

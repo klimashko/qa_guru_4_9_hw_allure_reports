@@ -1,5 +1,5 @@
 import allure
-from allure_commons.types import Severity
+from allure_commons.types import Severity, AttachmentType
 from selene import be
 from selene.support import by
 from selene.support.shared import browser
@@ -33,5 +33,8 @@ def test_github2():
 
     with allure.step('Проверяем наличие Issue с номером 1'):
         s(by.partial_text('#1')).should(be.visible)
+        allure.attach(browser.driver().get_screenshot_as_png(),
+                      name="Screen for test_steps_with.py",
+                      attachment_type=AttachmentType.PNG)
 
     dynamic_labels()

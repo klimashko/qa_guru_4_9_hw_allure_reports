@@ -1,5 +1,5 @@
 import allure
-from allure_commons.types import Severity
+from allure_commons.types import Severity, AttachmentType
 from selene import be
 from selene.support import by
 from selene.support.shared import browser
@@ -45,4 +45,7 @@ def open_issue_tab():
 @allure.step('Проверяем наличие Issue с номером {number}')
 def should_see_issue_with_number(number):
     s(by.partial_text('#' + number)).should(be.visible)
+    allure.attach(browser.driver().get_screenshot_as_png(),
+                  name="Screen for test_decorator_steps.py",
+                  attachment_type=AttachmentType.PNG)
 
